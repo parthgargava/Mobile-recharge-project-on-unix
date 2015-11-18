@@ -1,0 +1,121 @@
+#!bin/bash
+y=`date|cut -d" "-f 1`
+echo y
+echo " Hey!Welcome\c"
+read ch
+echo"1-Talktime voucher\c"
+echo"2-validity voucher\c"
+echo"3-SMS voucher\c"
+echo"4-Other schemes"
+echo "\nPLZ  chose ur choice\c"
+read ch
+
+case "$ch" in
+1*) echo "welcome sir/mam . plz enter the price to recharge ur phone \c"
+read amount
+echo"enter the cell no.\c"
+read no
+echo"ur no is\c"
+echo no
+echo"talktime is\c"
+if [ $amount=<50];
+then
+t=`expr amount*.87` 
+echo t
+elif [50<amount=<200];
+then
+t=`expr amount*.95`
+echo t
+elsif [200<amount=<1000];
+then
+echo amount
+else 
+t=`expr amount*1.2` 
+echo  t
+fi
+echo"\n wish to continue?(y/n)\c";;
+read answer 
+case "$answer " in
+[yY]*) continue;;
+*) break;;
+esac
+;;
+
+2*)echo"here r validity vouchers\c"
+  echo"1 -  Rs.100 - for 30 days \c"
+ echo"2 - Rs.500- for 6 months \c"
+  echo"3- Rs.1000- for 1yr.\c"
+  echo"4- Rs.2000-for 3 yr\c"
+echo "plz chose ur's choice"
+read v
+
+if[$v=1];
+then
+echo"you r subscribed for 30 days\c"
+elif[$v=2];
+then
+echo"u r subscribed for 6 months\c"
+elif[$v=3];
+then 
+echo"u r subscribed for 1 yr\c"
+else
+echo"u r subscribed for 3 yr\c"
+fi
+echo"Thank u\c"
+
+echo"\n wish to continue?(y/n)\c"
+read answer 
+case "$answer " in
+[yY]*) continue;;
+*) break;;
+esac
+;;
+
+3*)echo "SMS vouchers r here....\c"
+   echo"1:- 30days - 50 Rs - 500sms\c"
+   echo"2:- 6 month - 250 Rs - unlimited sms\c"
+   echo"3:- 1 yr - 500 Rs - unlimited sms\c"
+echo"chose urs\c"
+read s
+if[$s=1]
+then
+echo"u got 500 msg\c"
+elif[$s=2]
+then 
+echo"u got unlimited msg for 6 months\c"
+else
+echo"u got unlimited msg for 1 yr\c"
+fi
+
+echo"\n wish to continue?(y/n)\c"
+read answer 
+case "$answer " in
+[yY]*) continue;;
+*) break;;
+esac
+;;
+
+4*)echo"Here r our special services\c"
+echo"1-Do Not Disturb\c"       
+echo"2-Caller tune\c"
+echo"3-subscribe GPRS\c"
+echo"enter ur choice\c"
+read p
+if[p=1]
+then
+echo ("u have subscribed foe DND\c")
+elif[p=2]
+then
+echo("caller tune has been activated on ur cell\c")
+else
+echo("GPRS successfully subscribed ti ur cell\c")
+fi
+
+echo"\n wish to continue?(y/n)\c"
+read answer 
+case "$answer " in
+[yY]*) continue;;
+*) break;;
+esac
+;;
+esac
